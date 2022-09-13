@@ -10,8 +10,5 @@ public class Main {
 
         System.out.println("Total weight: " + basket.getTotalWeight() + " gr.");
 
-        Arithmetic arithmetic = new Arithmetic();
-        arithmetic.mnozhitelNumber();
-        arithmetic.print();
     }
 }

@@ -48,15 +48,16 @@ public class Basket {
             return;
         }
 
-        items = items + "\n" + name + " - " +
-            count + " шт. - " + price;
+        items = items + "\n" + name + " - " + count + " шт. - " + price;
         totalPrice = totalPrice + count * price;
     }
 
     public  void add(String name, int price, int count, double weight) {
-        items = items + "\n" + name + "-" + count + "sht. " + price + "ru. " + weight + "gr " ;
+        items = items + weight + "gr ";
         totalWeight = totalWeight + count * weight;
-    }
+        }
+
+
 
 
     public void clear() {
