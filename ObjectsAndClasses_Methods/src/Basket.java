@@ -52,7 +52,9 @@ public class Basket {
         items = items + "\n" + name + " - " + count + " шт. - " + price + "rub";
         totalPrice = totalPrice + count * price;
     }
-    public void add(String name,int price,int count, double weight){
+    public void add(String name, int price, int count, double weight) {
+        add(name , price , count);
+        items = items + " " + weight + " gr.";
         totalWeight = totalWeight + weight * count;
     }
 
