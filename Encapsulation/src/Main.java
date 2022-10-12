@@ -7,21 +7,19 @@ public class Main {
 //            elevator.move(floor);
 
 
-        MainDimensions mainDimensions = new MainDimensions(4,4,4,"45 grid",
-                45,"gfgfg",true,true);
-
-        Dimensions dimensions = new Dimensions(mainDimensions.getHeight(),
-                mainDimensions.getWidth(),
-                mainDimensions.getLength(),
-                mainDimensions.getDeliveryAddress(),
-                mainDimensions.getWeight(),
-                mainDimensions.getRegistrationNumber(),
-                mainDimensions.getIsToFlip(),
-                mainDimensions.getIsFragile());
-        dimensions.setHeight(45);
-        Dimensions.print();
 
 
+
+        Dimensions dimensions = new Dimensions(4,4,4);
+        
+        dimensions.setWidth(23);
+        dimensions.getWidth();
+        dimensions.setLength(23);
+        dimensions.printDimensions();
+
+//            MainDimensions mainDimensions = new MainDimensions(dimensions.getDimensions(),"45 grid",
+//                45, "43434", true, true);
+//            mainDimensions.setWeight(34);
 
 
 
@@ -32,6 +30,7 @@ public class Main {
 
 
         }
-    }
+
+}
 
 

@@ -1,36 +1,33 @@
 public class MainDimensions {
-    private final int height;
-    private final int width;
-    private  final int length;
     private final String deliveryAddress;
     private  final  int weight;
     private final String registrationNumber;
     private final boolean toFlip;
     private final boolean fragile;
 
-    public MainDimensions (int height,
-                           int width,
-                           int length,
-                           String deliveryAddress,
-                           int weight,
-                           String registrationNumber, boolean toFlip, boolean fragile){
-        this.height = height;
-        this.width = width;
-        this.length = length;
+    private int dimensions;
+
+
+
+    public MainDimensions(int dimensions,
+            String deliveryAddress,
+            int weight,
+            String registrationNumber,
+            boolean toFlip,
+            boolean fragile){
+
 
         this.deliveryAddress = deliveryAddress;
         this.weight = weight;
         this.registrationNumber = registrationNumber;
         this.toFlip = toFlip;
         this.fragile = fragile;
+        this.dimensions = dimensions;
+
+
     }
 
-    public int getHeight (){
-        return height;
-    }
-    public int getWidth(){
-        return width;
-    }
+
 
     public boolean getIsFragile() {
         return fragile;
@@ -50,15 +47,19 @@ public class MainDimensions {
     public int getWeight(){
         return weight;
     }
-    public int getLength(){
-        return length;
+
+    public int getDimension(){
+        return  dimensions;
     }
+
+    public void printMainDimensions(){
+        System.out.println(dimensions);
+    }
+
 
     public MainDimensions setDeliveryAddress (String deliveryAddress){
 
-        return new MainDimensions(height,
-                width,
-                length,
+        return new MainDimensions(dimensions,
                 deliveryAddress,
                 weight,
                 registrationNumber,
@@ -67,9 +68,7 @@ public class MainDimensions {
     }
     public MainDimensions setRegistrationNumber (String registrationNumber){
 
-        return new MainDimensions(height,
-                width,
-                length,
+        return new MainDimensions(dimensions,
                 deliveryAddress,
                 weight,
                 registrationNumber,
@@ -78,20 +77,7 @@ public class MainDimensions {
     }
     public MainDimensions setWeight (int weight){
 
-        return new MainDimensions(height,
-                width,
-                length,
-                deliveryAddress,
-                weight,
-                registrationNumber,
-                toFlip,
-                fragile);
-    }
-    public MainDimensions setWidth (int width){
-
-        return new MainDimensions(height,
-                width,
-                length,
+        return new MainDimensions(dimensions,
                 deliveryAddress,
                 weight,
                 registrationNumber,
@@ -99,12 +85,18 @@ public class MainDimensions {
                 fragile);
     }
 
+    public MainDimensions setToFlip (boolean toFlip){
 
-    public MainDimensions setLength (int length){
+        return new MainDimensions(dimensions,
+                deliveryAddress,
+                weight,
+                registrationNumber,
+                toFlip,
+                fragile);
+    }
+    public MainDimensions setFragile (boolean fragile){
 
-        return new MainDimensions(height,
-                width,
-                length,
+        return new MainDimensions(dimensions,
                 deliveryAddress,
                 weight,
                 registrationNumber,
@@ -112,15 +104,4 @@ public class MainDimensions {
                 fragile);
     }
 
-    public MainDimensions setHeight (int height){
-
-        return new MainDimensions(height,
-                width,
-                length,
-                deliveryAddress,
-                weight,
-                registrationNumber,
-                toFlip,
-                fragile);
-    }
 }
