@@ -1,6 +1,9 @@
+package src;
+
 public class Arithmetic {
     private static int number1;
     private static int number2;
+    private static int result;
 
 
     public Arithmetic (int number1, int number2){
@@ -10,13 +13,13 @@ public class Arithmetic {
 
 
     public static void mnozhitelNumber() {
-        int result = number1 * number2;
-        System.out.println("umnozhenie chsel rovno: " + result);
+        result = number1 * number2;
+        return;
     }
 
     public static void slozhenieNumber() {
-        int result = number1 + number2;
-        System.out.println("summa chsel rovna: " + result);
+        result = number1 + number2;
+        return;
     }
 
     public static void bolshieNumber() {
