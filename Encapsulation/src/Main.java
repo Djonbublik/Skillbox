@@ -6,30 +6,24 @@ public class Main {
 //            int floor = new Scanner(System.in).nextInt();
 //            elevator.move(floor);
 
+        Dimensions dimensions = new Dimensions(4, 5, 6);
 
 
+        MainDimensions mainDimensions = new MainDimensions(dimensions, "45 grid",
+                45, "43434", true, true);
+        mainDimensions.printMainDimensions();
+        dimensions.getDimensions();
+        System.out.println(dimensions.getDimensions());
 
-
-        Dimensions dimensions = new Dimensions(4,4,4);
-        
-        dimensions.setWidth(23);
-        dimensions.getWidth();
-        dimensions.setLength(23);
-        dimensions.printDimensions();
-
-//            MainDimensions mainDimensions = new MainDimensions(dimensions.getDimensions(),"45 grid",
-//                45, "43434", true, true);
-//            mainDimensions.setWeight(34);
-
-
-
+        dimensions = dimensions.setHeight(9);
+        dimensions.getDimensions();
+        System.out.println(dimensions.getDimensions());
 
 
 
 
 
-
-        }
+    }
 
 }
 
