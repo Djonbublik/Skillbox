@@ -4,8 +4,7 @@ public class MainDimensions {
     private final String registrationNumber;
     private final boolean toFlip;
     private final boolean fragile;
-
-    private final  Dimensions dimensions;
+    private Dimensions dimensions;
 
 
     public MainDimensions(Dimensions dimensions,
@@ -47,8 +46,9 @@ public class MainDimensions {
     public int getWeight() {
         return weight;
     }
-
-
+    public Dimensions getDimensions(){
+        return dimensions;
+    }
 
     public void printMainDimensions() {
         System.out.println(dimensions);
