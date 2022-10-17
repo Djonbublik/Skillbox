@@ -1,27 +1,28 @@
 public class Basket {
     private static int count = 0;
     public String items = "";
-    private  int totalPrice = 0;
-    private  int limit;
-    private  double totalWeight = 0;
+    private int totalPrice = 0;
+    private int limit;
+    private double totalWeight = 0;
 
-    public  static int totalBasketCount;
+    public static int totalBasketCount;
 
-    public  static  int totalBasketsPrice;
+    public static int totalBasketsPrice;
 
-    public static int averagePrice;
-    public static int averagePriceBaskets;
 
-    public static int getAveragePrice (){
+    public static int getAveragePrice() {
         return averagePrice();
     }
-    public static int getAveragePriceBaskets(){
+
+    public static int getAveragePriceBaskets() {
         return averagePriceBaskets();
     }
-    public static int getTotalBasketCount(){
+
+    public static int getTotalBasketCount() {
         return totalBasketCount;
     }
-    public static int getTotalBasketsPrice(){
+
+    public static int getTotalBasketsPrice() {
         return totalBasketsPrice;
     }
 
@@ -48,36 +49,34 @@ public class Basket {
         return count;
     }
 
-    public  void increaseCount(int count) {
+    public void increaseCount(int count) {
 
         Basket.count = Basket.count + count;
         System.out.println(Basket.count);
 
     }
 
-    public static void increaseTotalCoun(int count){
+    public static void increaseTotalCoun(int count) {
         Basket.totalBasketCount = Basket.totalBasketCount + count;
 
     }
 
-    public static void increaseTotalPrice(int price){
+    public static void increaseTotalPrice(int price) {
         Basket.totalBasketsPrice = Basket.totalBasketsPrice + price;
 
     }
 
     public static int averagePrice() {
-        return  averagePrice = Basket.totalBasketsPrice/Basket.totalBasketCount;
+        return Basket.totalBasketsPrice / Basket.totalBasketCount;
     }
 
-    public static int averagePriceBaskets(){
+    public static int averagePriceBaskets() {
 
-        return averagePriceBaskets = Basket.totalBasketsPrice/Basket.count;
+        return Basket.totalBasketsPrice / Basket.count;
     }
 
 
-
-
-    public  void add(String name, int price, int count) {
+    public void add(String name, int price, int count) {
         boolean error = false;
         if (contains(name)) {
             error = true;
@@ -97,13 +96,12 @@ public class Basket {
         increaseTotalCoun(count);
         increaseTotalPrice(price);
     }
+
     public void add(String name, int price, int count, double weight) {
-        add(name , price , count);
+        add(name, price, count);
         items = items + " " + weight + " gr.";
         totalWeight = totalWeight + weight * count;
     }
-
-
 
 
     public void clear() {
@@ -120,7 +118,7 @@ public class Basket {
         return totalWeight;
     }
 
-    public  boolean contains(String name) {
+    public boolean contains(String name) {
         return items.contains(name);
     }
 
