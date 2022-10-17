@@ -3,15 +3,11 @@ import java.util.Scanner;
 public class Computer {
     private final String vendor;
     private final String name;
-    public  Processor processor;
-    public  RAM ram;
-    public Drive drive;
-    public  Screen screen;
-    public   Keyboard keyboard;
-
-    public int totalWeight;
-
-
+    private final Processor processor;
+    private final RAM ram;
+    private final Drive drive;
+    private final Screen screen;
+    private final Keyboard keyboard;
 
 
     public Computer(String name, String vendor, Processor processor, RAM ram, Drive drive, Screen screen, Keyboard keyboard) {
@@ -24,43 +20,7 @@ public class Computer {
         this.keyboard = keyboard;
     }
 
-    public Computer setDrive (Drive drive){
-        return new Computer(name,
-                vendor,
-                processor,
-                ram,
-                drive,
-                screen,
-                keyboard);
-    }
-    public Computer setScreen (Screen screen){
-        return new Computer(name,
-                vendor,
-                processor,
-                ram,
-                drive,
-                screen,
-                keyboard);
-    }
-    public Computer setRAM (RAM ram){
-        return new Computer(name,
-                vendor,
-                processor,
-                ram,
-                drive,
-                screen,
-                keyboard);
-    }
-    public Computer setProcessor (Processor processor){
-        return new Computer(name,
-                vendor,
-                processor,
-                ram,
-                drive,
-                screen,
-                keyboard);
-    }
-    public Computer setKeyboard (Keyboard keyboard){
+    public Computer setDrive(Drive drive) {
         return new Computer(name,
                 vendor,
                 processor,
@@ -70,16 +30,7 @@ public class Computer {
                 keyboard);
     }
 
-    public Computer setName (String name){
-        return new Computer(name,
-                vendor,
-                processor,
-                ram,
-                drive,
-                screen,
-                keyboard);
-    }
-    public Computer setVendor(String vendor){
+    public Computer setScreen(Screen screen) {
         return new Computer(name,
                 vendor,
                 processor,
@@ -89,29 +40,82 @@ public class Computer {
                 keyboard);
     }
 
-    public Drive getDrive (){
+    public Computer setRAM(RAM ram) {
+        return new Computer(name,
+                vendor,
+                processor,
+                ram,
+                drive,
+                screen,
+                keyboard);
+    }
+
+    public Computer setProcessor(Processor processor) {
+        return new Computer(name,
+                vendor,
+                processor,
+                ram,
+                drive,
+                screen,
+                keyboard);
+    }
+
+    public Computer setKeyboard(Keyboard keyboard) {
+        return new Computer(name,
+                vendor,
+                processor,
+                ram,
+                drive,
+                screen,
+                keyboard);
+    }
+
+    public Computer setName(String name) {
+        return new Computer(name,
+                vendor,
+                processor,
+                ram,
+                drive,
+                screen,
+                keyboard);
+    }
+
+    public Computer setVendor(String vendor) {
+        return new Computer(name,
+                vendor,
+                processor,
+                ram,
+                drive,
+                screen,
+                keyboard);
+    }
+
+    public Drive getDrive() {
         return drive;
     }
 
-    public Screen getScreen (){
+    public Screen getScreen() {
         return screen;
     }
-    public RAM getRam (){
+
+    public RAM getRam() {
         return ram;
     }
-    public Processor getProcessor (){
+
+    public Processor getProcessor() {
         return processor;
     }
-    public Keyboard getKeyboard(){
+
+    public Keyboard getKeyboard() {
         return keyboard;
     }
 
-    public int getTotalWeight(){
-        return totalWeight = drive.driveWeight + screen.screenWeight + ram.ramWeight + processor.processorWeight + keyboard.ketboardWeight;
+    public int getTotalWeight() {
+        return drive.getDriveWeight() + screen.getScreenWeight() + ram.getRamWeight() + processor.getProcessorWeight() + keyboard.getKetboardWeight();
     }
 
 
-    public String toString (){
+    public String toString() {
         return "\n" + name + "\n" + vendor + "\n" + "\n" + "\n" + drive + "\n" + screen + "\n" + ram + "\n"
                 + "\n" + processor + "\n" + keyboard + "\n" + "Obchii ves: "
                 + getTotalWeight() + " gr.";
