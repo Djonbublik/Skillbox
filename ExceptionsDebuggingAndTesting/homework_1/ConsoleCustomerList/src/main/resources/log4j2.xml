@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+        <configuration status="WARN">
+
+
+    <appenders>
+
+
+    <File fileName="homework_1/ConsoleCustomerList/src/logs/queries.log" name="SearchFile">
+
+    <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+
+    <Filters>
+        <MarkerFilter marker="INPUT_HISTORY" />
+
+</Filters>
+    </File>
+
+        <File fileName="homework_1/ConsoleCustomerList/src/logs/errors.log" name="SearchFile2">
+
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+
+            <Filters>
+            <MarkerFilter marker="INVALID_ERROR" />
+
+        </Filters>
+
+</File>
+
+</appenders>
+
+
+    <loggers>
+
+
+    <root level="debug">
+
+    <appender-ref level="info" ref="SearchFile"/>
+        <appender-ref level="info" ref="SearchFile2"/>
+</root>
+
+</loggers>
+
+</configuration>
