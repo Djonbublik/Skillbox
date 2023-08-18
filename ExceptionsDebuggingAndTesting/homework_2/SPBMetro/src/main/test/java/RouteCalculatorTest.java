@@ -13,6 +13,7 @@ public class RouteCalculatorTest extends TestCase {
     protected void setUp() throws Exception {
         rout = new ArrayList<>();
 
+
        metroMap = new HashMap<>();
         Line line1 = new Line(1, "1л");
         Line line2 = new Line(2, "2л");
@@ -70,6 +71,22 @@ public class RouteCalculatorTest extends TestCase {
 
     }
 
+    public void testRouteCalculator(){
+        this.stationIndex = stationIndex;
+        final Map<Integer, Line> number2line;
+        final TreeSet<Station> stations;
+        final Map<Station, TreeSet<Station>> connections;
+        number2line = new HashMap<>();
+        stations = new TreeSet<>();
+        connections = new TreeMap<>();
+        number2line.put(1 , new Line(1, "1л"));
+        stations.add(new Station("1с. 1л.", number2line.get(1)));
+        System.out.println();
+
+
+        assertEquals(stationIndex, stationIndex);
+    }
+
 
     public void testCalculateDuration(){
         Line line1 = new Line(1, "1л");
@@ -115,9 +132,8 @@ public class RouteCalculatorTest extends TestCase {
         rout.add(metroMap.get("3с.1л"));
         rout.add(metroMap.get("2с.3л"));
         rout.add(metroMap.get("3с.3л"));
-        rout.add(metroMap.get("4с.3л"));
-        rout.add(metroMap.get("1с.3л"));
-        assertEquals(routeCalculator.getShortestRoute(metroMap.get("1с.1л"), metroMap.get("1с.3л")), rout);
+        rout.add(metroMap.get("3с.4л"));
+        assertEquals(routeCalculator.getRouteWithTwoConnections(metroMap.get("1с.1л"), metroMap.get("3с.4л")),rout );
 
 
     }

@@ -118,7 +118,7 @@ public class RouteCalculator {
         return null;
     }
 
-    private static List<Station> getRouteWithTwoConnections(Station from, Station to) {
+    public static List<Station> getRouteWithTwoConnections(Station from, Station to) {
         if (from.getLine().equals(to.getLine())) {
             return null;
         }
