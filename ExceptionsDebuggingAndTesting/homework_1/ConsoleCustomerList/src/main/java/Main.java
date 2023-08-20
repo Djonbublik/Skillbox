@@ -33,18 +33,18 @@ public class Main {
 
                 if (tokens[0].equals("add")) {
                     executor.addCustomer(tokens[1]);
-                    logger.info(INPUT_HISTORY_MARKER, "пользователь добавил данные о клиенте", tokens[1]);
+                    logger.info(INPUT_HISTORY_MARKER,  command + " пользователь добавил данные о клиенте");
                 } else if (tokens[0].equals("list")) {
                     executor.listCustomers();
-                    logger.info(INPUT_HISTORY_MARKER, "пользователь запросил данные о клиенте");
+                    logger.info(INPUT_HISTORY_MARKER, command + " пользователь запросил данные о клиенте");
                 } else if (tokens[0].equals("remove")) {
                     executor.removeCustomer(tokens[1]);
-                    logger.info(INPUT_HISTORY_MARKER, "пользователь удалил данные о клиенте");
+                    logger.info(INPUT_HISTORY_MARKER, command + " пользователь удалил данные о клиенте");
                 } else if (tokens[0].equals("count")) {
                     System.out.println("There are " + executor.getCount() + " customers");
                 } else if (tokens[0].equals("help")) {
                     System.out.println(helpText);
-                    logger.info(INPUT_HISTORY_MARKER, "пользователь запросил список команд");
+                    logger.info(INPUT_HISTORY_MARKER, command + " пользователь запросил список команд");
                 } else {
                     System.out.println(COMMAND_ERROR);
                 }

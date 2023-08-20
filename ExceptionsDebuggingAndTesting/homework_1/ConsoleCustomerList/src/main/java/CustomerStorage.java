@@ -7,8 +7,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CustomerStorage {
+    private static final Marker INPUT_HISTORY_MARKER = MarkerManager.getMarker("INPUT_HISTORY");
     private static final Marker INVALID_ERROR = MarkerManager.getMarker("INVALID_ERROR");
     private final Map<String, Customer> storage;
+
 
     public CustomerStorage() {
         storage = new HashMap<>();
@@ -22,16 +24,19 @@ public class CustomerStorage {
 
         String[] components = data.split("\\s+");
         if (components.length !=4){
+            Main.logger.info(INPUT_HISTORY_MARKER,  "add " + data);
             Main.logger.info(INVALID_ERROR, "неверный формат данных");
             throw new IllegalArgumentException(" неправлиный формат данных");
         }
          if (components[INDEX_PHONE].length() != 12) {
              Main.logger.info(INVALID_ERROR,"неверный формат телефона");
+             Main.logger.info(INPUT_HISTORY_MARKER,  "add " + data);
             throw new IllegalArgumentException("неправлиный формат телефона");
         }
         Pattern patternEmail = Pattern.compile("^(.+)@(\\S+)$");
         Matcher matcherEmail = patternEmail.matcher(components[INDEX_EMAIL]);
         if(!matcherEmail.matches()){
+            Main.logger.info(INPUT_HISTORY_MARKER,  "add " + data);
             Main.logger.info(INVALID_ERROR,"неверный формат почты");
             throw new IllegalArgumentException("неправлиный формат почты");
         }
