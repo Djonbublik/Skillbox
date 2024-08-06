@@ -1,45 +1,15 @@
-import com.fasterxml.jackson.databind.Module;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import entity.Metro;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+            System.out.println("Program for parsing files");
 
-        DataCvs dataCvs = new DataCvs();
-        dataCvs.parsingDataCvs();
+            Metro mskMetro = new Metro();
+            HtmlParser htmlParser = new HtmlParser(mskMetro);
 
-        Depths depths = new Depths();
-        System.out.println(depths.depthParse());
-
-//        SearchFiles searchFiles = new SearchFiles();
-//        ArrayList <File> filesArrayList = new ArrayList<>();
-//        searchFiles.searchFile(new File("src/data"), filesArrayList);
-
-
-
-        ParsingStations parsingStations = new ParsingStations();
-        ParsingLins parsingLins = new ParsingLins();
-        parsingStations.parsingStations();
-        parsingLins.parsingLins();
-
-
-
-
-
-
-
-
-
-
+            FinderFilesInFolders finderFiles = new FinderFilesInFolders(mskMetro);
+            finderFiles.browsingFolder("data/data");
+            mskMetro.writeMapToJson();
+            mskMetro.writeStationsToJson();
+        }
     }
-
-}
-
-
